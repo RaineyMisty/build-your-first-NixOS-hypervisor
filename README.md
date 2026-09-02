@@ -6,15 +6,15 @@ It is the same workstation I am using now.
 # My set
 
 ### Hardware
-- MiniPC: `Minisforum M1 Pro 285H`
-- CPU: `i9, 16 cores`
-- GPU: `Arc 140/130`
+- MiniPC: [`MINISFORUM M1 Pro-285H`](https://www.minisforum.com/products/minisforum-m1-pro-285h-mini-pc)
+- CPU: `Intel Core Ultra 9 285H, 16 Cores`
+- GPU: [`Intel Arc 140T`](https://www.intel.com/content/www/us/en/products/sku/241747/intel-core-ultra-9-processor-285h-24m-cache-up-to-5-40-ghz/specifications.html)
 - RAM: `96GB`
 - Disk: `4T`
 
 ### Software
 - NixOS
-- `strongtz/i915-sriov-dkms`
+- [`strongtz/i915-sriov-dkms`](https://github.com/strongtz/i915-sriov-dkms)
 
 # Process
 
@@ -33,7 +33,7 @@ It is the same workstation I am using now.
   - follow vm instruction to create
     - vCPU:`8`, topology: `1 sockets, 8 cores, 1 threads`
     - disk: if you want disk `D:/`, create two, and I recommend not to allocate too much (128G for each is enough, you can add more if you want later)
-  - download [virtio win driver iso](link) and install it
+  - download [VirtIO Windows driver ISO](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso) and install it
   - add `TPM` and enable it in your hypervisor configuration (Only for win11 requirement)
   - change your disk from `SATA` to `VirtIO` (or your win will be sloooow)
 
@@ -50,7 +50,7 @@ It is the same workstation I am using now.
   cat /sys/devices/pci0000:00/0000:00:02.0/sriov_totalvfs
   # or /sys/bus/pci/devices/0000:00:02.0/sriov_totalvfs if the path doesn't work
   ```
-  - clone strongtz, and follow the instruction they give, and you will get many GPUs
+  - clone [`strongtz/i915-sriov-dkms`](https://github.com/strongtz/i915-sriov-dkms), and follow the instruction they give, and you will get many GPUs
 
 #### 8. Allocate your GPUs to all your vm, now enjoy your Kingdom(or Queendom)!
 
