@@ -1,15 +1,15 @@
 # Build Your First NixOS Hypervisor Workstation
 It is the same workstation I am using now.
 
-### Warning!!! search for your GPU to find out whether it can be virtulized or not! or you might get vm without GPU!
+### Warning!!! search for your GPU to find out whether it can be virtualized or not! or you might get vm without GPU!
 
 # My set
 
 ### Hardware
 - MiniPC: `Minisforum M1 Pro 285H`
-- CPU: `i9, 16core`
+- CPU: `i9, 16 cores`
 - GPU: `Arc 140/130`
-- Ram: `96GB`
+- RAM: `96GB`
 - Disk: `4T`
 
 ### Software
@@ -23,8 +23,8 @@ It is the same workstation I am using now.
 #### 2. Install
 
 #### 3. Set configuration of your computer
-  - setup the download application
-  - setup vm envirnment
+  - set up the download application
+  - set up vm envirnment
 
 #### 4. Open `virt-manager` (there must be something else, but I can't remember right now)
 
@@ -32,7 +32,7 @@ It is the same workstation I am using now.
   - download win11 iso
   - follow vm instruction to create
     - vCPU:`8`, topology: `1 sockets, 8 cores, 1 threads`
-    - disk: if you want disk `D:/`, create two, and I recommand not allocate too much (128G for each is enough, you can add more if you want later)
+    - disk: if you want disk `D:/`, create two, and I recommend not to allocate too much (128G for each is enough, you can add more if you want later)
   - download [virtio win driver iso](link) and install it
   - add `TPM` and enable it in your hypervisor configuration (Only for win11 requirement)
   - change your disk from `SATA` to `VirtIO` (or your win will be sloooow)
@@ -42,13 +42,13 @@ It is the same workstation I am using now.
   - Install 
   > yes, way easier than win XD
 
-#### 7. Cut your GPT into 8 pieces (the coolest part)
-  - set the configuration, finding out your GPU model (`i915` or `xe`)
+#### 7. Cut your GPU into 8 pieces (the coolest part)
+  - set the configuration, and find out your GPU driver (`i915` or `xe`)
   - test if your GPU can be cut: 
   ```bash
   # Cheers if it is greater than zero. Mine is 7
   cat /sys/devices/pci0000:00/0000:00:02.0/sriov_totalvfs
-  # or /sys/bus/pci/devices/0000:00:02.0/sriov_totalvfs if the first addr doesn't work
+  # or /sys/bus/pci/devices/0000:00:02.0/sriov_totalvfs if the path doesn't work
   ```
   - clone strongtz, and follow the instruction they give, and you will get many GPUs
 
@@ -56,6 +56,6 @@ It is the same workstation I am using now.
 
 # Advanced Option
 
-- Allocate a sharing disk for all vm
-- Use `Remmina` to control your running vm
+- Allocate a shared disk for all VMs
+- Use `Remmina` to control your running VMs
 - Make your old laptop a vm in your new computer
