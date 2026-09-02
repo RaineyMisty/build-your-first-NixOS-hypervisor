@@ -13,39 +13,42 @@ It is the same workstation I am using now.
 - Disk: `4T`
 
 ### Software
-- nixos
-- strongtz
+- NixOS
+- `strongtz/i915-sriov-dkms`
 
 # Process
 
-#### 1. Go to [NixOS website](http://nixos.com) to download the iso file.
+#### 1. Go to [NixOS website](https://nixos.org/) to download the iso file.
 
 #### 2. Install
 
 #### 3. Set configuration of your computer
-  - set the download application
-  - set vm envirnment
+  - setup the download application
+  - setup vm envirnment
 
-#### 4. open virt-manager(there must be something else, but I can't remember right now)
+#### 4. Open `virt-manager` (there must be something else, but I can't remember right now)
 
-#### 5. create your first Windows vm(for me, win11)
+#### 5. Create your first Windows vm(for me, win11)
   - download win11 iso
   - follow vm instruction to create
-    - vCPU:8, topology: 1sockets, 8cores, 1threads
-    - disk: if you want disk `D:/`, create 2, and I recommand not allocate too much(128G for each is enough)
-  - download the tool(I forget the name, whatever, you will find it easyly on Google)
-  - Add `TPM`, set it in your hypervisor configuration. This step is only for win11 requirement.
+    - vCPU:`8`, topology: `1 sockets, 8 cores, 1 threads`
+    - disk: if you want disk `D:/`, create two, and I recommand not allocate too much (128G for each is enough, you can add more if you want later)
+  - download [virtio win driver iso](link) and install it
+  - add `TPM` and enable it in your hypervisor configuration (Only for win11 requirement)
   - change your disk from `SATA` to `VirtIO` (or your win will be sloooow)
 
-#### 6. create your first Linux vm(for me, Ubuntu26.04)
+#### 6. Create your first Linux vm(for me, Ubuntu26.04)
   - download ubuntu iso
-  - install(yes, way more easy than win XD)
+  - Install 
+  > yes, way easier than win XD
 
-#### 7. cut your GPT into 8 pieces(most cool part)
-  - set the configuration, finding out your GPU mod(i915 or xe)
+#### 7. Cut your GPT into 8 pieces(most cool part)
+  - set the configuration, finding out your GPU model (`i915` or `xe`)
   - test if your GPU can be cut: 
-  ```
-  (some command)
+  ```bash
+  # Cheers if it is greater than zero. Mine is 7
+  cat /sys/devices/pci0000:00/0000:00:02.0/sriov_totalvfs
+  # or /sys/bus/pci/devices/0000:00:02.0/sriov_totalvfs if the first addr doesn't work
   ```
   - clone strongtz, and follow the instruction they give, and you will get many GPUs
 
