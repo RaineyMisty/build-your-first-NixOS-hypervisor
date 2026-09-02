@@ -26,7 +26,7 @@ It is the same workstation I am using now.
   - set up the download application
   - set up vm envirnment
 
-#### 4. Open `virt-manager` (there must be something else, but I can't remember right now)
+#### 4. Open `virt-manager`
 
 #### 5. Create your first Windows vm(for me, win11)
   - download win11 iso
