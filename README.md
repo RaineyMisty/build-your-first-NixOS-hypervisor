@@ -42,7 +42,7 @@ It is the same workstation I am using now.
   - Install 
   > yes, way easier than win XD
 
-#### 7. Cut your GPT into 8 pieces(most cool part)
+#### 7. Cut your GPT into 8 pieces (the coolest part)
   - set the configuration, finding out your GPU model (`i915` or `xe`)
   - test if your GPU can be cut: 
   ```bash
