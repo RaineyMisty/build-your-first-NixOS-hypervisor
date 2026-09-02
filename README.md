@@ -1,7 +1,7 @@
 # Build Your First NixOS Hypervisor Workstation
 It is the same workstation I am using now.
 
-### Warning!!! search for your GPU to find out whether it can be virtualized or not! or you might get vm without GPU!
+### Warning!!! Check whether your GPU supports virtualization before start! Or you might get VMs without GPU!
 
 # My set
 
